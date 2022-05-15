@@ -3,39 +3,43 @@ import './App.css';
 function InputBox (props) {
 
   return (
-    <input type="text">
-      {props.value}
-    </input>
+    <div>
+      <input type="text" value={props.value}/>
+    </div>
   );  
 };
 
 function Button (props) {
-
   return (
-    <button type="button">
-      {props.value}
-    </button>
+    <div>
+      <button type="button" className="btn btn-success">
+        {props.value}
+      </button>
+    </div>
   );  
 };
 
 function Main () {
 
   function renderInput(i) {
-    <InputBox value={i} />;
+    return <InputBox value={i} />;
   }
 
   function renderButton(i) {
-    <Button value={i} />;
+    return <Button value={i} />;
   }
 
   return (
     <div className="wrapper">
       <div className="left-panel">
-        Text
+        <h1>Lear to code by watching others</h1>
+        <p>See how experienced developers solve problems in real-time.
+        Watching scripted tutorials is great, but understanding how
+        developers think is invaluable.</p>
       </div>
       <div className="right-panel">
         <div className="header">
-          Header
+        Try it free 7 days then $20/mo. thereafter
         </div>
         <div className="form-container">
           <div className="inputs-container">
@@ -47,7 +51,7 @@ function Main () {
           <div className="button-container">
             {renderButton('CLAIM TOUR FREE TRIAL')}
           </div>
-          Text
+          By clicking the button, you are agreeing to our Terms and Services
         </div>
       </div>
     </div>
